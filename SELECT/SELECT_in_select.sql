@@ -36,3 +36,9 @@ WHERE name='poland')
 SELECT name, CONCAT(ROUND (population/(SELECT population FROM world WHERE name="Germany")*100,0),'%')
 FROM world
 WHERE continent ='europe'
+
+--select max
+
+SELECT name
+FROM world
+WHERE gdp >(SELECT gdp FROM world WHERE continent='europe' ORDER BY gdp DESC LIMIT 1)
