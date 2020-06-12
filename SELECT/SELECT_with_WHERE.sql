@@ -6,6 +6,7 @@ SELECT name FROM world
 WHERE population >= 200000000
 
 --select chosen columns
+
 SELECT name, gdp/population AS 'per capita GDP'
 FROM world
 WHERE population>=200000000 
@@ -20,3 +21,8 @@ WHERE continent ='South America'
 SELECT name, population
 FROM world
 WHERE name IN ('France', 'Germany','Italy')
+
+--select using LIKE
+SELECT name
+FROM world
+WHERE name LIKE '%United%'
