@@ -18,3 +18,15 @@ WHERE continent IN
    FROM world
    WHERE  name='argentina' or name='australia')
 ORDER BY name
+
+--two select in a select
+
+SELECT name
+FROM world
+WHERE population >
+(SELECT population
+FROM world
+WHERE name='canada' ) AND population <
+(SELECT population
+FROM world
+WHERE name='poland')
