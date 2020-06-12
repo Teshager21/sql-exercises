@@ -55,3 +55,10 @@ ORDER BY eteam.teamname
 SELECT DISTINCT stadium, COUNT(stadium)
 FROM goal JOIN game ON matchid=id
 GROUP BY stadium
+
+--match involving POD
+
+SELECT matchid,mdate, COUNT(matchid)
+  FROM game JOIN goal ON matchid = id 
+ WHERE (team1 = 'POL' OR team2 = 'POL')
+GROUP BY  matchid
