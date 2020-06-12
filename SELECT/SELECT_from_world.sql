@@ -3,4 +3,5 @@ SELECT population FROM world
 
   --scandinavian population
 
-  
+  SELECT name, population FROM world
+  WHERE name IN ('sweden', 'norway', 'denmark');
