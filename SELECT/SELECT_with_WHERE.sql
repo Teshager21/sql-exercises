@@ -9,3 +9,9 @@ WHERE population >= 200000000
 SELECT name, gdp/population AS 'per capita GDP'
 FROM world
 WHERE population>=200000000 
+
+--select per million of population
+
+SELECT name, population/1000000
+FROM world
+WHERE continent ='South America'
