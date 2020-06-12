@@ -42,3 +42,10 @@ WHERE continent ='europe'
 SELECT name
 FROM world
 WHERE gdp >(SELECT gdp FROM world WHERE continent='europe' ORDER BY gdp DESC LIMIT 1)
+
+--synchronised subqueries
+SELECT continent, name, area FROM world x
+  WHERE area >= ALL
+    (SELECT area FROM world y
+        WHERE y.continent=x.continent
+          AND area>0)
