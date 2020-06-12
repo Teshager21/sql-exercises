@@ -42,3 +42,8 @@ WHERE area>3000000 XOR population>250000000
 SELECT name, ROUND(population/1000000,2) AS 'population per million', ROUND(GDP/1000000000,2) AS  'GDP per billion'
 FROM world
 WHERE continent="south america" 
+
+--select with ROUND and MODULUS
+SELECT name, (ROUND(GDP/population/1000,0)*1000) AS 'per-capita GDP'
+FROM world
+WHERE GDP>=1000000000000
