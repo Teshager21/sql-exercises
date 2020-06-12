@@ -19,3 +19,8 @@ WHERE teamid ="GER"
 SELECt team1, team2, player
 FROM game JOIN goal ON (id=matchid)
 WHERE goal.player LIKE "mario%"
+
+--inline join
+SELECT player, teamid,coach, gtime
+  FROM goal JOIN eteam ON (teamid=id)
+ WHERE gtime<=10
