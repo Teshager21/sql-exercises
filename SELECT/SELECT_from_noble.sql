@@ -14,3 +14,9 @@ SELECT yr, subject, winner
  SELECT yr, subject
 FROM nobel
 WHERE winner='Albert einstein'
+
+--peace winner
+
+SELECT winner
+FROM nobel
+WHERE subject="peace"
