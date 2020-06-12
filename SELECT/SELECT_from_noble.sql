@@ -62,3 +62,9 @@ WHERE subject='medicine' AND yr<1910 OR(subject='literature' AND yr>=2004)
 SELECT *
 FROM nobel
 WHERE  winner LIKE "peter gr_nberg"
+
+--select with escape
+
+SELECT *
+FROM nobel
+WHERE winner= "eugene o\'neill"
