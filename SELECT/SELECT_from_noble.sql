@@ -20,3 +20,9 @@ WHERE winner='Albert einstein'
 SELECT winner
 FROM nobel
 WHERE subject="peace"
+
+--select with BETWEEN
+
+SELECT yr, subject, winner
+FROM nobel
+WHERE yr BETWEEN 1980 AND 1989 AND subject="Literature"
