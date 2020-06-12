@@ -57,3 +57,8 @@ WHERE yr=1980 AND (subject !='chemistry' AND subject != 'medicine')
 SELECT yr, subject, winner
 FROM nobel
 WHERE subject='medicine' AND yr<1910 OR(subject='literature' AND yr>=2004)
+
+--select with wildcard character
+SELECT *
+FROM nobel
+WHERE  winner LIKE "peter gr_nberg"
