@@ -26,3 +26,10 @@ WHERE subject="peace"
 SELECT yr, subject, winner
 FROM nobel
 WHERE yr BETWEEN 1980 AND 1989 AND subject="Literature"
+
+--select usig IN
+SELECT * 
+FROM nobel
+WHERE winner IN ('Theodore Roosevelt',
+                  'Woodrow Wilson',
+                  'Jimmy Carter','Barack Obama')
