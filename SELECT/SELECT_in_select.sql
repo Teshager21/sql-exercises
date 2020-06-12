@@ -49,3 +49,6 @@ SELECT continent, name, area FROM world x
     (SELECT area FROM world y
         WHERE y.continent=x.continent
           AND area>0)
+ --corellated subquery with distinct
+ SELECT DISTINCT continent, (SELECT name FROM world y WHERE x.continent=y.continent ORDER BY name LIMIT 1)
+FROM world x 
