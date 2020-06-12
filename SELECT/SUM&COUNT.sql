@@ -7,3 +7,8 @@ FROM world
 SELECT SUM(gdp)
 FROM world
 WHERE continent='africa'
+
+--select with COUNT
+SELECT COUNT(*)
+FROM world
+WHERE area>=1000000
