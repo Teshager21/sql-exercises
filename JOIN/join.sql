@@ -49,3 +49,9 @@ SELECT DISTINCT teamname, COUNT(goal.teamid)
   FROM eteam JOIN goal ON id=teamid
 GROUP BY goal.teamid
 ORDER BY eteam.teamname
+
+--stadium and number of goals
+
+SELECT DISTINCT stadium, COUNT(stadium)
+FROM goal JOIN game ON matchid=id
+GROUP BY stadium
