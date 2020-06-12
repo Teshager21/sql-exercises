@@ -30,3 +30,8 @@ SELECT player, teamid,coach, gtime
 SELECT mdate,teamname
 FROM game JOIN eteam ON (game.team1=eteam.id)
 WHERE coach="Fernando Santos"
+
+--join by key
+SELECT goal.player 
+FROM goal JOIN game ON(game.id=goal.matchid)
+WHERE game.stadium='National Stadium, Warsaw'
