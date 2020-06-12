@@ -41,3 +41,11 @@ WHERE game.stadium='National Stadium, Warsaw'
 SELECT DISTINCT goal.player
   FROM game JOIN goal ON matchid = id 
     WHERE teamid!="GER" AND (team1="GER" OR team2="GER")
+
+
+--join with count and group by
+
+SELECT DISTINCT teamname, COUNT(goal.teamid)
+  FROM eteam JOIN goal ON id=teamid
+GROUP BY goal.teamid
+ORDER BY eteam.teamname
