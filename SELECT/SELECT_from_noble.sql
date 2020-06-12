@@ -39,3 +39,10 @@ WHERE winner IN ('Theodore Roosevelt',
 SELECT winner
 FROM nobel
 WHERE winner LIKE 'John%'
+
+--select with and and or
+
+SELECT yr, subject, winner
+FROM  nobel
+WHERE  (subject='physics' AND yr=1980) OR (subject='chemistry' AND yr=1984)
+
