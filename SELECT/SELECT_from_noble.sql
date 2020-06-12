@@ -46,3 +46,8 @@ SELECT yr, subject, winner
 FROM  nobel
 WHERE  (subject='physics' AND yr=1980) OR (subject='chemistry' AND yr=1984)
 
+--selec with not equal to
+
+SELECT yr, subject, winner
+FROM nobel
+WHERE yr=1980 AND (subject !='chemistry' AND subject != 'medicine')
