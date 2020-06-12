@@ -14,3 +14,8 @@ WHERE player LIKE "%Bender%"
 SELECT player,teamid,stadium, mdate
   FROM game JOIN goal ON (id=matchid)
 WHERE teamid ="GER"
+
+--online join
+SELECt team1, team2, player
+FROM game JOIN goal ON (id=matchid)
+WHERE goal.player LIKE "mario%"
