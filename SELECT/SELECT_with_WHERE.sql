@@ -15,3 +15,8 @@ WHERE population>=200000000
 SELECT name, population/1000000
 FROM world
 WHERE continent ='South America'
+
+--use IN
+SELECT name, population
+FROM world
+WHERE name IN ('France', 'Germany','Italy')
