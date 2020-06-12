@@ -47,3 +47,8 @@ WHERE continent="south america"
 SELECT name, (ROUND(GDP/population/1000,0)*1000) AS 'per-capita GDP'
 FROM world
 WHERE GDP>=1000000000000
+
+--select with comparison across fields
+SELECT name, capital
+  FROM world
+ WHERE LENGTH(name)=LENGTH(capital)
