@@ -52,3 +52,12 @@ SELECT continent, name, area FROM world x
  --corellated subquery with distinct
  SELECT DISTINCT continent, (SELECT name FROM world y WHERE x.continent=y.continent ORDER BY name LIMIT 1)
 FROM world x 
+
+--three layer deep subqueries 
+SELECT name ,continent, population
+FROM world
+WHERE continent =(SELECT DISTINCT continent
+FROM world x
+WHERE 25000000>=ALL(SELECT population
+FROM world y
+WHERE x.continent=y.continent))
