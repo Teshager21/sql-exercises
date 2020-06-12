@@ -61,3 +61,9 @@ FROM world x
 WHERE 25000000>=ALL(SELECT population
 FROM world y
 WHERE x.continent=y.continent))
+
+---correlated subqueries with exclusion
+SELECT name, continent
+FROM world x
+WHERE population >ALL(SELECT 3*population FROM world y
+WHERE x.continent=y.continent AND x.name!=y.name)
