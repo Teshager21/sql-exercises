@@ -51,3 +51,9 @@ WHERE  (subject='physics' AND yr=1980) OR (subject='chemistry' AND yr=1984)
 SELECT yr, subject, winner
 FROM nobel
 WHERE yr=1980 AND (subject !='chemistry' AND subject != 'medicine')
+
+--select with exclusion and inclusion
+
+SELECT yr, subject, winner
+FROM nobel
+WHERE subject='medicine' AND yr<1910 OR(subject='literature' AND yr>=2004)
