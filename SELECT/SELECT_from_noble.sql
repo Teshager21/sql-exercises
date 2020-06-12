@@ -68,3 +68,9 @@ WHERE  winner LIKE "peter gr_nberg"
 SELECT *
 FROM nobel
 WHERE winner= "eugene o\'neill"
+
+--select order in with desc
+
+SELECT winner, yr, subject
+FROM nobel
+WHERE winner REGEXP "^Sir" ORDER BY yr DESC
