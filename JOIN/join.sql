@@ -8,3 +8,9 @@ FROM game
 INNER JOIN goal
 ON game.id=goal.matchid
 WHERE player LIKE "%Bender%"
+
+--online join
+
+SELECT player,teamid,stadium, mdate
+  FROM game JOIN goal ON (id=matchid)
+WHERE teamid ="GER"
