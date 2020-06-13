@@ -48,3 +48,11 @@ FROM movie JOIN casting ON id=movieid
 WHERE id IN (SELECT movieid 
 FROM casting JOIN actor ON id=actorid
 WHERE actor.name="harrison ford")
+
+--harrsion ford as a supporting role
+
+SELECT DISTINCT title
+FROM movie JOIN casting ON id=movieid
+WHERE id IN (SELECT movieid 
+FROM casting JOIN actor ON id=actorid
+WHERE actor.name="harrison ford" AND casting.ord!=1)
