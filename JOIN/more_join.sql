@@ -14,4 +14,10 @@ LIMIT 1;
 SELECT id, title, yr
 FROM movie
 WHERE title LIKE '%star trek%'
-ORDER BY yr
+ORDER BY yr;
+
+--Glen's id
+
+SELECT id
+FROM actor
+WHERE name="glenn close"
