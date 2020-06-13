@@ -38,3 +38,12 @@ COUNT(teacher.name)
 FROM dept LEFT JOIN teacher ON (teacher.dept=dept.id)
 GROUP BY dept.name
 
+--CASE
+SELECT teacher.name ,CASE WHEN teacher.dept=1
+                         THEN 'Sci'
+                         WHEN teacher.dept=2
+                         THEN 'Sci'
+                         ELSE 'Art'
+                          
+                         END
+FROM teacher
