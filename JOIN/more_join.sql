@@ -33,3 +33,11 @@ LIMIT 1
 SELECT actor.name
 FROM actor JOIN casting ON(actorid=id)
 WHERE movieid=11768
+
+--JOIN with subquery
+
+SELECT actor.name
+FROM actor JOIN casting ON id=actorid
+WHERE movieid=(SELECT movie.id
+FROM movie
+WHERE title="Alien")
