@@ -87,9 +87,17 @@ SELECT DISTINCT actor.name
 FROM actor JOIN casting ON actor.id=actorid
 WHERE actorid in (SELECT actorid
 FROM casting y
-WHERE (SELECT COUNT(actorid)
-FROM casting x
+WHERE (SELECT COUNT(actorid) FROM casting x
 WHERE x.actorid=y.actorid AND ord=1
 GROUP BY actorid
 HAVING COUNT(actorid)>=15))
 ORDER BY actor.name
+
+--number of actors per each cast
+
+SELECT movie.title, COUNT(actorid)
+FROM movie JOIN casting x ON id=movieid
+WHERE yr=1978 AND movieid IN (SELECT movieid FROM casting y WHERE
+x.movieid=y.movieid)
+GROUP BY (movieid)
+ORDER BY  COUNT(actorid) DESC ,title
