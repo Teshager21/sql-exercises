@@ -79,3 +79,17 @@ FROM movie JOIN casting ON movie.id=movieid
 WHERE movieid IN (SELECT movieid
 FROM casting JOIN actor ON actor.id=actorid
 WHERE actor.name="Julie Andrews")
+
+
+--actors with 15 leading roles
+
+SELECT DISTINCT actor.name 
+FROM actor JOIN casting ON actor.id=actorid
+WHERE actorid in (SELECT actorid
+FROM casting y
+WHERE (SELECT COUNT(actorid)
+FROM casting x
+WHERE x.actorid=y.actorid AND ord=1
+GROUP BY actorid
+HAVING COUNT(actorid)>=15))
+ORDER BY actor.name
