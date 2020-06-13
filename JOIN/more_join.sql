@@ -21,3 +21,15 @@ ORDER BY yr;
 SELECT id
 FROM actor
 WHERE name="glenn close"
+
+--ID of casablanca
+
+SELECT id
+FROM movie
+WHERE title='casablanca'
+LIMIT 1
+
+--chain joins
+SELECT actor.name
+FROM actor JOIN casting ON(actorid=id)
+WHERE movieid=11768
