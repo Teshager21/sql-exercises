@@ -101,3 +101,12 @@ WHERE yr=1978 AND movieid IN (SELECT movieid FROM casting y WHERE
 x.movieid=y.movieid)
 GROUP BY (movieid)
 ORDER BY  COUNT(actorid) DESC ,title
+
+--all people who worked with art garfunkel
+
+SELECT actor.name
+FROM actor JOIN casting ON actorid=actor.id AND actor.name!="art garfunkel"
+WHERE movieid IN(
+SELECT movieid 
+FROM casting JOIN actor ON id=actorid
+WHERE actor.name="art garfunkel")
