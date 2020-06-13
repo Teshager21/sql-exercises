@@ -13,3 +13,8 @@ SELECT teacher.name, dept.name
 
 SELECT teacher.name, dept.name
 FROM teacher LEFT JOIN dept ON(dept.id=teacher.dept)
+
+--right join
+
+SELECT teacher.name,dept.name
+FROM teacher RIGHT JOIN dept ON(teacher.dept=dept.id)
