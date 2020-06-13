@@ -32,3 +32,9 @@ FROM teacher LEFT JOIN dept ON(teacher.dept=dept.id)
 SELECT COUNT(teacher.id), COUNT(teacher.mobile)
 FROM teacher
 
+--select and NULL
+SELECT dept.name,
+COUNT(teacher.name)
+FROM dept LEFT JOIN teacher ON (teacher.dept=dept.id)
+GROUP BY dept.name
+
