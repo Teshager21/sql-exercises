@@ -71,3 +71,11 @@ SELECT yr,COUNT(title) FROM
 WHERE name='Rock Hudson'
 GROUP BY yr
 HAVING COUNT(title) > 2
+
+--biuld table and join
+SELECT movie.title, name
+FROM movie JOIN casting ON movie.id=movieid
+           JOIN actor   ON actor.id=actorid AND ord=1
+WHERE movieid IN (SELECT movieid
+FROM casting JOIN actor ON actor.id=actorid
+WHERE actor.name="Julie Andrews")
