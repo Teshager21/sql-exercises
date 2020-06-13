@@ -41,3 +41,10 @@ FROM actor JOIN casting ON id=actorid
 WHERE movieid=(SELECT movie.id
 FROM movie
 WHERE title="Alien")
+
+--Join with two layer subquery
+SELECT DISTINCT title
+FROM movie JOIN casting ON id=movieid
+WHERE id IN (SELECT movieid 
+FROM casting JOIN actor ON id=actorid
+WHERE actor.name="harrison ford")
