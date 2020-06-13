@@ -28,3 +28,7 @@ FROM teacher
 SELECT teacher.name, COALESCE(dept.name, 'None')
 FROM teacher LEFT JOIN dept ON(teacher.dept=dept.id)
 
+--COUNT
+SELECT COUNT(teacher.id), COUNT(teacher.mobile)
+FROM teacher
+
